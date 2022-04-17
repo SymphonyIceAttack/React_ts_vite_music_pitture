@@ -8,7 +8,4 @@ COPY package.json .
 
 RUN yarn
 
-RUN yarn build
-
-
-CMD [ "yarn","preview","--host" ]
+CMD [ "yarn","dev","--host" ]
