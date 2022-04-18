@@ -6,7 +6,7 @@ WORKDIR /usr/app
 
 COPY package.json .
 
-RUN yarn && yarn add esbuild-linux-arm64
+RUN yarn
 
 COPY . .
 
