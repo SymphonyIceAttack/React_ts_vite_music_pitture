@@ -6,7 +6,7 @@ services:
       context: React_ts_happybirthday
       dockerfile: dockerfile
     ports:
-      - "80:80"
+      - "80:4173"
     volumes:
       - /usr/app/node_modules
       - ./React_ts_happybirthday:/usr/app
