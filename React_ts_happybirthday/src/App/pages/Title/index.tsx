@@ -12,8 +12,6 @@ const index: React.FC<Props> = ({ count }) => {
     useEffect(() => {
         let timer: any;
         if (currentIndex < speechStrArr[count].length) {
-            console.log("currentIndex", currentIndex);
-            console.log(currentIndex <= speechStrArr[count].length);
             timer = setTimeout(() => {
                 setCurrentStr(
                     (str) => (str += speechStrArr[count][currentIndex])

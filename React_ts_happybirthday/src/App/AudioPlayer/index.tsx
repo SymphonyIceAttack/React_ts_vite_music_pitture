@@ -15,10 +15,14 @@ const index: React.FC<Props> = ({
     setIsPlaying,
 }) => {
     useEffect(() => {
-        setTimeout(() => {
-            audioRef.current?.play();
-        }, 2000);
-    },[]);
+        setIsPlaying(false);
+        if (count !== 0) {
+            setTimeout(() => {
+                setIsPlaying(true);
+                audioRef.current?.play();
+            }, 2000);
+        }
+    }, [count]);
     const audioRef = useRef<HTMLAudioElement>(null);
     return (
         <>
