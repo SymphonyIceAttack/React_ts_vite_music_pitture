@@ -18,7 +18,7 @@ const index: React.FC<Props> = ({
         setTimeout(() => {
             audioRef.current?.play();
         }, 2000);
-    });
+    },[]);
     const audioRef = useRef<HTMLAudioElement>(null);
     return (
         <>
