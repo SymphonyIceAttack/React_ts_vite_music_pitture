@@ -6,8 +6,8 @@ WORKDIR /usr/app
 
 COPY package.json .
 
-
+RUN yarn && yarn add esbuild-linux-arm64
 
 COPY . .
 
-CMD [ "yarn","preview" ]
+CMD [ "yarn","preview","--host" ]
