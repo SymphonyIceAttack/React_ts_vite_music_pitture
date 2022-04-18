@@ -3,25 +3,31 @@ import "./AudioPlayer.less";
 import { GrPlay } from "react-icons/gr";
 import { AiOutlinePause } from "react-icons/ai";
 interface Props {
+    time: number;
     count: number;
     MusicUrl: string;
     isPlaying: boolean;
     setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }
 const index: React.FC<Props> = ({
+    time,
     count,
     MusicUrl,
     isPlaying,
     setIsPlaying,
 }) => {
     useEffect(() => {
+        let timer: any;
         setIsPlaying(false);
         if (count !== 0) {
-            setTimeout(() => {
+            timer = setTimeout(() => {
                 setIsPlaying(true);
                 audioRef.current?.play();
-            }, 2000);
+            }, time);
         }
+        return () => {
+            clearTimeout(timer);
+        };
     }, [count]);
     const audioRef = useRef<HTMLAudioElement>(null);
     return (

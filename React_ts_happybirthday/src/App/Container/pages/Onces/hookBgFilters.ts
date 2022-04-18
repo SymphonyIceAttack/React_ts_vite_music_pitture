@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { imageArr } from "@/imageArr";
+import { imageArr } from "@/App/Container/pages/Onces/OnePageModel/imageArr"
 
 export const BGhooks = (
     time:number,

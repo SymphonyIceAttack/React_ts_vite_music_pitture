@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { musicArr } from "@/musicArr";
+import { musicArr } from "@/App/Container/pages/Onces/OnePageModel/musicArr";
 
 export const hookMusic = (count: number) => {
     const [MusicUrl, setMusicUrl] = useState(musicArr[count]);

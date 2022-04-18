@@ -1,52 +1,38 @@
 import { useEffect, useState } from "react";
-import UpArrow from "@/App/UpArrow";
-import DownArrow from "@/App/DownArrow";
-import Pages from "@/App/pages";
-import BgFilter from "@/App/Bgfilter";
-import AudioPlayer from "@/App/AudioPlayer";
-import { BGhooks } from "@/App/hookBgFilters";
-import { hookMusic } from "@/App/hooksMusic";
-
+import Container from "@/App/Container";
+import NavBar from "@/App/NavBar";
+import Loading from "@/App/Loading";
 import "./App.less";
+import { FlexWindowHooks } from "@/App/FlexWindowHooks";
 
 function App() {
-    const [time, _setTime] = useState<number>(1500);
-    const [count, _setCount] = useState<number>(0);
-    const { isloading, DecrePage, IncrePage, BgUrl } = BGhooks(
-        time,
-        count,
-        _setCount
-    );
-    const { MusicUrl, isPlaying, setIsPlaying, IncreMusic, DecreMusic } =
-        hookMusic(count);
+    const isSmallWidth = FlexWindowHooks(700);
+    const [isLoading, setIsLoading] = useState(true);
+    useEffect(() => {
+        setTimeout(() => {
+            setIsLoading(false);
+        }, 2000);
+        return () => {};
+    }, []);
 
     return (
-        <div className="App">
-            <Pages
-                BgUrl={BgUrl}
-                isloading={isloading}
-                time={time}
-                count={count}
-            />
-            <UpArrow
-                isloading={isloading}
-                count={count}
-                DecrePage={DecrePage}
-                DecreMusic={DecreMusic}
-            />
-            <AudioPlayer
-                count={count}
-                MusicUrl={MusicUrl}
-                isPlaying={isPlaying}
-                setIsPlaying={setIsPlaying}
-            />
-            <DownArrow
-                isloading={isloading}
-                count={count}
-                IncrePage={IncrePage}
-                IncreMusic={IncreMusic}
-            />
-            <BgFilter BgUrl={BgUrl} isloading={isloading} time={time} />
+        <div
+            className="App"
+            style={{
+                background: isLoading ? "black" : "",
+                justifyContent: isLoading ? "center" : "",
+                alignItems: isLoading ? "center" : "",
+                flexDirection: isSmallWidth ? `column-reverse` : undefined,
+            }}
+        >
+            {isLoading ? (
+                <Loading />
+            ) : (
+                <>
+                    <NavBar isSmallWidth={isSmallWidth} />
+                    <Container isSmallWidth={isSmallWidth} />
+                </>
+            )}
         </div>
     );
 }

@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { imageArr } from "@/imageArr";
+import { imageArr } from "@/App/Container/pages/Onces/OnePageModel/imageArr";
 import "./DownArrow.less";
 interface Props {
     isloading: boolean;

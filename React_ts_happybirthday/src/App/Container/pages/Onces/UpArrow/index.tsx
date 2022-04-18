@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { musicArr } from "@/musicArr";
+import { musicArr } from "@/App/Container/pages/Onces/OnePageModel/musicArr";
 import "./UpArrow.less";
 interface Props {
     isloading: boolean;

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { speechStrArr } from "@/speechStr";
+import { speechStrArr } from "@/App/Container/pages/Onces/OnePageModel/speechStr";
 import "./Title.less";
 
 interface Props {
