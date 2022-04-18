@@ -3,4 +3,32 @@ div.App {
   min-height: 100vh;
   max-width: 100vw;
   display: flex;
+
+  .AppSpan {
+    font-size: 3rem;
+    color: transparent;
+    background: linear-gradient(90deg, rgba(243, 72, 104, 1) 20.232394366197184%, rgba(242, 71, 104, 1) 20.232394366197184%, rgba(158, 0, 236, 1) 80.23239436619718%);
+    backdrop-filter: opacity(20%);
+    -webkit-backdrop-filter: opacity(20%);
+    background-size: 200% 100%;
+    background-position: 0% 0%;
+    background-clip: text;
+    -webkit-background-clip: text;
+    animation: flag 1.5s linear infinite;
+    word-break: break-all;
+  }
+}
+
+@keyframes flag {
+  0% {
+    background-position: 0% 0%;
+  }
+
+  50% {
+    background-position: 100% 0%;
+  }
+
+  100% {
+    background-position: 0% 0%;
+  }
 }

@@ -13,7 +13,7 @@ export const FlexWindowHooks = (size: number) => {
             window.removeEventListener("resize", resize);
         };
     }, []);
-
+    
     useEffect(() => {
         setIsSmallWidth(windowWith < size);
         return () => {};
