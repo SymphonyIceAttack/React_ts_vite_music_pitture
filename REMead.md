@@ -6,5 +6,7 @@
 ```
 # If you want to production
 ```
+   yarn
+   yarn build
    docker-compose up --build
    open (http://localhost:80)

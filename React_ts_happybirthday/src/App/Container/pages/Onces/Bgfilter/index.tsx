@@ -14,7 +14,7 @@ const index: React.FC<Props> = ({ BgUrl, isloading, time }) => {
             style={{
                 backgroundImage: ` url("${BgUrl}")`,
                 animation: isloading
-                    ? `move ${time / 1000}s linear infinite`
+                    ? `move ${time / 1000}s linear 1`
                     : "",
             }}
         ></div>

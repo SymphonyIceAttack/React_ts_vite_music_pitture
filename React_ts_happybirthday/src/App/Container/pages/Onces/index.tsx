@@ -25,7 +25,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
         hookMusic(count);
     return (
         <div
-            className="Onces"
+            className="Onces Pages"
             style={{ width: isSmallWidth ? "90vw" : "70vw" }}
         >
             <Content isloading={isloading} count={count} BgUrl={BgUrl} />

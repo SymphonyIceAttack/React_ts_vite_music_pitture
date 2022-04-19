@@ -7,7 +7,7 @@
     align-items: center;
     position: relative;
     overflow: hidden;
-    transition: all 0.3s;
+    transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     a {
         margin-top: 1rem;
@@ -28,6 +28,7 @@
     }
 
     .active_link {
+        transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
         background-color: rgb(204, 204, 204);
         box-shadow: 0 0 5px 5px rgb(89, 192, 34);
     }

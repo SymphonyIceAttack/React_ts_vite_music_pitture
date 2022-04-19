@@ -23,8 +23,8 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             <NavLink to="/onces" className={ActiveClass}>
                 Onces
             </NavLink>
-            <NavLink to="/home" className={ActiveClass}>
-                Home
+            <NavLink to="/twice" className={ActiveClass}>
+                Twice
             </NavLink>
         </div>
     );

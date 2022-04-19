@@ -1,6 +1,5 @@
 import React from "react";
-import Pages from "./pages";
-
+import Pages from "./pages/Pages";
 import "./Contaner.less";
 
 interface Props {
