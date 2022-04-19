@@ -6,14 +6,17 @@ import DownArrow from "@/App/Container/pages/Onces/DownArrow";
 import Bgfilter from "@/App/Container/pages/Onces/Bgfilter";
 import { BGhooks } from "@/App/Container/pages/Onces/hookBgFilters";
 import { hookMusic } from "@/App/Container/pages/Onces/hooksMusic";
-
+import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
 import "./Onces.less";
 
 interface Props {
     isSmallWidth: boolean;
+    setIsOn: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const index: React.FC<Props> = ({ isSmallWidth }) => {
+const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
+    routerInitHooks(setIsOn);
+
     const [time, _setTime] = useState<number>(1500);
     const [count, _setCount] = useState<number>(0);
     const { isloading, DecrePage, IncrePage, BgUrl } = BGhooks(
@@ -23,6 +26,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     );
     const { MusicUrl, isPlaying, setIsPlaying, IncreMusic, DecreMusic } =
         hookMusic(count);
+
     return (
         <div
             className="Onces Pages"
