@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Suspense } from "react";
 import Pages from "./pages/Pages";
 import Loading from "@/App/Loading";
+import ContainerHeader from "./Container_header";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 
 import "./Contaner.less";
@@ -14,6 +15,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     const [isOn, setIsOn] = useState(true);
     return (
         <div className="Container">
+            <ContainerHeader isSmallWidth={isSmallWidth} />
             <Suspense fallback={<Loading />}>
                 <SwitchTransition mode="out-in">
                     <CSSTransition
