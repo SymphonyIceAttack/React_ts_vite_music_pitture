@@ -27,7 +27,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                 Twice
             </NavLink>
             <NavLink to="/third" className={ActiveClass}>
-                Third
+                组件库
             </NavLink>
         </div>
     );

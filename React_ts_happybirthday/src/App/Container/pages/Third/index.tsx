@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
 import Notify from "@/components/Notify";
-
+import Dialog from "@/components/Dialog";
 import "./Third.less";
 
 interface Props {
@@ -11,6 +11,7 @@ interface Props {
 
 const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
     const [isNotify, setIsNotify] = useState(false);
+    const [isDialog, setIsDialog] = useState(false);
     routerInitHooks(setIsOn);
     return (
         <div
@@ -22,8 +23,25 @@ const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
                     setIsNotify(true);
                 }}
             >
-                change
+                通知弹窗组件
             </button>
+            <button
+                onClick={() => {
+                    setIsDialog(true);
+                }}
+            >
+                弹窗组件
+            </button>
+            <Dialog
+                isDialog={isDialog}
+                setIsDialog={setIsDialog}
+                render={() => (
+                    <div className="DialogDivtest">
+                        <p>dawd</p>
+                        <span>23323</span>
+                    </div>
+                )}
+            />
             <Notify
                 color={"red"}
                 str="信息展示区"

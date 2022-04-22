@@ -25,7 +25,7 @@ const NotifyInner = ({
             setTimeout(() => {
                 setIsNotify(false);
             }, 1000);
-        }, 1000);
+        }, 1200);
         return () => {
             clearTimeout(timer);
         };
