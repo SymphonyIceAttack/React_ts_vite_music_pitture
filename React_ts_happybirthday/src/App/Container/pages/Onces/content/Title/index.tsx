@@ -30,7 +30,7 @@ const index: React.FC<Props> = ({ count }) => {
         return () => {};
     }, [count]);
 
-    return <p>{currentStr}</p>;
+    return <p className="OncesContentTitle">{currentStr}</p>;
 };
 
 export default index;

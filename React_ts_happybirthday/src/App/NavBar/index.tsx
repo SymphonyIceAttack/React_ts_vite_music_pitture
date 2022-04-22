@@ -16,8 +16,8 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             className="NavBar"
             style={{
                 marginTop: isSmallWidth ? "1rem" : "",
-                flexDirection: isSmallWidth ? "row" : "column-reverse",
-                width:isSmallWidth?"100vw":"8rem"
+                flexDirection: isSmallWidth ? "row" : `column`,
+                width: isSmallWidth ? "100vw" : "8rem",
             }}
         >
             <NavLink to="/onces" className={ActiveClass}>
@@ -25,6 +25,9 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             </NavLink>
             <NavLink to="/twice" className={ActiveClass}>
                 Twice
+            </NavLink>
+            <NavLink to="/third" className={ActiveClass}>
+                Third
             </NavLink>
         </div>
     );

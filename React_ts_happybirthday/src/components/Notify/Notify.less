@@ -1,0 +1,64 @@
+.Notify {
+    top: 6rem;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 20vw;
+    min-height: 30px;
+    max-height: 10vh;
+    background-color: rgba(188, 255, 80, 0.5);
+    padding: 1rem;
+    border-radius: 5%;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-iteration-count: 1;
+
+    p {
+        max-width: 80%;
+    }
+
+    span.Loading3Quarters {
+        margin-left: 0.5rem;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+        transition: all 0.3s;
+        animation: LoadingNotify 2s linear infinite;
+    }
+}
+
+@keyframes LoadingNotify {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+
+}
+
+@keyframes NotifyStart {
+    0% {
+        opacity: 0;
+        top: -1rem
+    }
+
+    100% {
+        opacity: 1;
+        top: 6rem
+    }
+}
+
+@keyframes NotifyEnd {
+    0% {
+        opacity: 1;
+        top: 6rem
+    }
+
+    100% {
+        opacity: 0;
+        top: -1rem
+    }
+}
