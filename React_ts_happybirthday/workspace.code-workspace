@@ -20,6 +20,7 @@
 		},
 	],
 	"settings": {
-		"nuxt.isNuxtApp": false
+		"nuxt.isNuxtApp": false,
+		"DockerRun.DisableAutoGenerateConfig": true
 	}
 }
