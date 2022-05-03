@@ -1,5 +1,6 @@
-import React from "react";
+import React, { useRef, useEffect } from "react";
 import Title from "@/App/Container/pages/Onces/content/Title";
+import { Bounce } from "./Buonce";
 import "./content.less";
 interface Props {
     count: number;
@@ -7,8 +8,11 @@ interface Props {
     BgUrl: string;
 }
 const index: React.FC<Props> = ({ isloading, BgUrl, count }) => {
+    const [ContentRef] = Bounce();
+
     return (
         <div
+            ref={ContentRef}
             className="Content"
             style={{
                 display: isloading ? "none" : "",

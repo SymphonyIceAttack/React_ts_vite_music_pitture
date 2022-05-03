@@ -9,7 +9,6 @@ import { LoadingHooks } from "@/App/AppHooks/LoadingHooks";
 function App() {
     const isSmallWidth = FlexWindowHooks(700);
     const { isLoading, isMouseDown } = LoadingHooks();
-
     return (
         <div
             className="App"

@@ -5,12 +5,12 @@ export const routerInitHooks = (
 ) => {
     useEffect(() => {
         let timer: any;
-        if (timer !== "undefined") {
-            timer = setTimeout(() => {
-                setIsOn(true);
-                clearTimeout(timer);
-            }, 500);
-        }
+
+        timer = setTimeout(() => {
+            setIsOn(true);
+            clearTimeout(timer);
+        }, 500);
+
         return () => {
             setIsOn(false);
         };

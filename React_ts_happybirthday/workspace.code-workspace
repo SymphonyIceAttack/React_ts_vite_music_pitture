@@ -1,0 +1,25 @@
+{
+	"folders": [
+		{
+			"path": "./"
+		},
+		{
+			"path": "./src/App"
+		},
+		{
+			"path": "./src/App/Container"
+		},
+		{
+			"path": "./src/App/Container/pages/Onces"
+		},
+		{
+			"path": "./src/App/Container/pages/Twice"
+		},
+		{
+			"path": "./src/App/Container/pages/Third"
+		},
+	],
+	"settings": {
+		"nuxt.isNuxtApp": false
+	}
+}
