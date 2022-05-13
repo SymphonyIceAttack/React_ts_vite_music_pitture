@@ -12,7 +12,7 @@ interface Props {
 }
 
 const index: React.FC<Props> = ({ isSmallWidth }) => {
-    const [isOn, setIsOn] = useState(true);
+    const [isOn, setIsOn] = useState("Onces");
     return (
         <div className="Container">
             <ContainerHeader isSmallWidth={isSmallWidth} />
@@ -21,7 +21,8 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                     <CSSTransition
                         classNames="Pages"
                         timeout={500}
-                        key={isOn ? "on" : "off"}
+                        key={isOn}
+
                     >
                         {Pages(isSmallWidth, setIsOn)}
                     </CSSTransition>

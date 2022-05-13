@@ -6,13 +6,13 @@ import "./Third.less";
 
 interface Props {
     isSmallWidth: boolean;
-    setIsOn: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOn: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
     const [isNotify, setIsNotify] = useState(false);
     const [isDialog, setIsDialog] = useState(false);
-    routerInitHooks(setIsOn);
+    routerInitHooks(setIsOn,"Third");
     return (
         <div
             className="Third"

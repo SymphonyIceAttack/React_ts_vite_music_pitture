@@ -4,10 +4,10 @@ import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
 import "./Twice.less";
 interface Props {
     isSmallWidth: boolean;
-    setIsOn: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOn: React.Dispatch<React.SetStateAction<string>>;
 }
 const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
-    routerInitHooks(setIsOn);
+    routerInitHooks(setIsOn,"Twice");
 
     return (
         <div

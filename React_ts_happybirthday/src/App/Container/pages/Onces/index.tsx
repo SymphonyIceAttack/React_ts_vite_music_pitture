@@ -11,11 +11,11 @@ import "./Onces.less";
 
 interface Props {
     isSmallWidth: boolean;
-    setIsOn: React.Dispatch<React.SetStateAction<boolean>>;
+    setIsOn: React.Dispatch<React.SetStateAction<string>>;
 }
 
 const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
-    routerInitHooks(setIsOn);
+    routerInitHooks(setIsOn, "Onces");
 
     const [time, _setTime] = useState<number>(1500);
     const [count, _setCount] = useState<number>(0);
