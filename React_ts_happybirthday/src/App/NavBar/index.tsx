@@ -53,17 +53,19 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     };
 
     useEffect(() => {
-        const Alinks = document.querySelectorAll("a");
-        Alinks.forEach((link) => {
-            if (link.className === "active_link") {
-                const initTop = link.offsetTop;
-                const initHeight = link.clientHeight;
-                setNavCursorTop(initTop);
-                setLinkActiveTop(initTop);
-                setLinkHeight(initHeight);
-                setLinkActiveHeight(initHeight);
-            }
-        });
+        setTimeout(() => {
+            const Alinks = document.querySelectorAll("a");
+            Alinks.forEach((link) => {
+                if (link.className === "active_link") {
+                    const initTop = link.offsetTop;
+                    const initHeight = link.clientHeight;
+                    setNavCursorTop(initTop);
+                    setLinkActiveTop(initTop);
+                    setLinkHeight(initHeight);
+                    setLinkActiveHeight(initHeight);
+                }
+            });
+        }, 500);
 
         return () => {};
     }, []);
