@@ -13,7 +13,6 @@ export const Route = (
     },
     {
         path: "/onces",
-
         element: (
             <Wraper>
                 <Onces isSmallWidth={isSmallWidth} setIsOn={setIsOn} />
