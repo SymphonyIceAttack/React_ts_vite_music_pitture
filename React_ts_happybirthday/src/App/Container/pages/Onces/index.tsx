@@ -7,7 +7,7 @@ import Bgfilter from "@/App/Container/pages/Onces/Bgfilter";
 import { BGhooks } from "@/App/Container/pages/Onces/hookBgFilters";
 import { hookMusic } from "@/App/Container/pages/Onces/hooksMusic";
 import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
-import "./Onces.less";
+import style from "./Onces.module.less";
 
 interface Props {
     isSmallWidth: boolean;
@@ -29,7 +29,7 @@ const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
 
     return (
         <div
-            className="Onces Pages"
+            className={`${style.Onces}`}
             style={{ width: isSmallWidth ? "90vw" : "70vw" }}
         >
             <Content isloading={isloading} count={count} BgUrl={BgUrl} />
