@@ -16,7 +16,7 @@ function App() {
                 background: isLoading || !isMouseDown ? "black" : "",
                 justifyContent: isLoading || !isMouseDown ? "center" : "",
                 alignItems: isLoading || !isMouseDown ? "center" : "",
-                flexDirection: isSmallWidth ? `column-reverse` : undefined,
+                flexDirection: isSmallWidth ? `column-reverse` : `column`,
             }}
         >
             {isLoading || !isMouseDown ? (

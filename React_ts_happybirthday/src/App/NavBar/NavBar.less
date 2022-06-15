@@ -1,7 +1,6 @@
 .NavBar {
     display: flex;
-    flex-direction: column;
-    margin-right: 2rem;
+    flex-direction: row;
     background-color: rgb(29, 130, 197);
     justify-content: center;
     align-items: center;
@@ -10,11 +9,12 @@
     transition: all cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
     a {
-        margin-top: 1rem;
         border-radius: 10px;
         padding: 0.5rem;
         text-decoration: none;
         font-size: 30px;
+        margin: 1rem 0;
+        margin-right: 0.5rem;
 
         &:hover {
             scale: (1.1);
@@ -35,10 +35,10 @@
 
     .nav_cursor {
         background: rgb(22, 208, 155);
-        width: 10px;
+        height: 5px;
         transition: all .2s ease;
         position: absolute;
-        right: 0;
+        bottom:5px;
         border-radius: 3rem;
     }
 

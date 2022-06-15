@@ -6,17 +6,13 @@ import DownArrow from "@/App/Container/pages/Onces/DownArrow";
 import Bgfilter from "@/App/Container/pages/Onces/Bgfilter";
 import { BGhooks } from "@/App/Container/pages/Onces/hookBgFilters";
 import { hookMusic } from "@/App/Container/pages/Onces/hooksMusic";
-import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
 import style from "./Onces.module.less";
 
 interface Props {
     isSmallWidth: boolean;
-    setIsOn: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
-    routerInitHooks(setIsOn, "Onces");
-
+const index: React.FC<Props> = ({ isSmallWidth }) => {
     const [time, _setTime] = useState<number>(1500);
     const [count, _setCount] = useState<number>(0);
     const { isloading, DecrePage, IncrePage, BgUrl } = BGhooks(

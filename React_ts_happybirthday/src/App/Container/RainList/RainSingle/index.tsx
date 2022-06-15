@@ -18,14 +18,13 @@ const index: React.FC<Props> = ({ Boxheight, Boxwidth }) => {
 
     useEffect(() => {
         const timer = setTimeout(() => {
-            setRandomTop((top) => top + initTop.current * 0.33);
-            setRandomLeft((left) => (left % 2 == 0 ? left + 11 : left - 7));
-        }, 100);
+            setRandomTop((top) => top + window.innerHeight + 200);
+        }, 0);
 
         return () => {
             clearTimeout(timer);
         };
-    }, [RandomTop, RandomLeft]);
+    }, []);
 
     const BoxStyle: React.CSSProperties = {
         height: Boxheight,
@@ -35,7 +34,7 @@ const index: React.FC<Props> = ({ Boxheight, Boxwidth }) => {
         left: RandomLeft,
         backgroundImage:
             "linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(22, 140, 190, 1))",
-        transition: "all 1s",
+        transition: "all 5s",
     };
     return <div style={BoxStyle}></div>;
 };

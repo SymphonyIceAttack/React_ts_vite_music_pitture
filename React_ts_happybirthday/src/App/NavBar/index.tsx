@@ -26,9 +26,9 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
         },
     ];
     const [NavCursorTop, setNavCursorTop] = useState(0);
-    const [LinkHeight, setLinkHeight] = useState(0);
-    const [LinkActiveTop, setLinkActiveTop] = useState(0);
-    const [LinkActiveHeight, setLinkActiveHeight] = useState(0);
+    const [LinkWidth, setLinkWidth] = useState(0);
+    const [LinkActiveLeft, setLinkActiveLeft] = useState(0);
+    const [LinkActiveWidth, setLinkActiveWidth] = useState(0);
     const ActiveClass = ({ isActive }: { isActive: boolean }): string => {
         if (isActive) return "active_link";
         return "";
@@ -37,19 +37,19 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     const ActiveClick = (
         e: React.MouseEvent<HTMLAnchorElement, MouseEvent>
     ) => {
-        const { offsetTop, clientHeight } = e.currentTarget;
-        setLinkActiveTop(offsetTop);
-        setLinkActiveHeight(clientHeight);
+        const { offsetLeft, clientWidth } = e.currentTarget;
+        setLinkActiveLeft(offsetLeft);
+        setLinkActiveWidth(clientWidth);
     };
     const MouseEnter = (e: React.MouseEvent<HTMLAnchorElement, MouseEvent>) => {
-        const { offsetTop, clientHeight } = e.currentTarget;
-        setNavCursorTop(offsetTop);
-        setLinkHeight(clientHeight);
+        const { offsetLeft, clientWidth } = e.currentTarget;
+        setNavCursorTop(offsetLeft);
+        setLinkWidth(clientWidth);
     };
 
     const MouseLeft = () => {
-        setNavCursorTop(LinkActiveTop);
-        setLinkHeight(LinkActiveHeight);
+        setNavCursorTop(LinkActiveLeft);
+        setLinkWidth(LinkActiveWidth);
     };
 
     useEffect(() => {
@@ -57,12 +57,12 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             const Alinks = document.querySelectorAll("a");
             Alinks.forEach((link) => {
                 if (link.className === "active_link") {
-                    const initTop = link.offsetTop;
-                    const initHeight = link.clientHeight;
+                    const initTop = link.offsetLeft;
+                    const initHeight = link.clientWidth;
                     setNavCursorTop(initTop);
-                    setLinkActiveTop(initTop);
-                    setLinkHeight(initHeight);
-                    setLinkActiveHeight(initHeight);
+                    setLinkActiveLeft(initTop);
+                    setLinkWidth(initHeight);
+                    setLinkActiveWidth(initHeight);
                 }
             });
         }, 500);
@@ -74,9 +74,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
         <div
             className="NavBar"
             style={{
-                marginTop: isSmallWidth ? "1rem" : "",
-                flexDirection: isSmallWidth ? "row" : `column`,
-                width: isSmallWidth ? "100vw" : "8rem",
+                width: isSmallWidth ? "100vw" : "100vw",
             }}
         >
             {ArrRoute.map((route) => (
@@ -84,7 +82,6 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                     to={route.to}
                     className={ActiveClass}
                     key={route.name}
-                    style={{ marginRight: isSmallWidth ? `0.5rem` : "" }}
                     onMouseEnter={(e) => MouseEnter(e)}
                     onClick={(e) => ActiveClick(e)}
                     onMouseLeave={() => MouseLeft()}
@@ -92,17 +89,14 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                     {route.name}
                 </NavLink>
             ))}
-            {isSmallWidth ? (
-                <></>
-            ) : (
-                <div
-                    className={"nav_cursor"}
-                    style={{
-                        top: NavCursorTop + "px",
-                        height: LinkHeight + "px",
-                    }}
-                ></div>
-            )}
+
+            <div
+                className={"nav_cursor"}
+                style={{
+                    left: NavCursorTop + "px",
+                    width: LinkWidth + "px",
+                }}
+            ></div>
         </div>
     );
 };

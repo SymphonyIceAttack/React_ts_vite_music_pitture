@@ -1,18 +1,15 @@
 import React, { useState } from "react";
-import { routerInitHooks } from "@/App/Container/pages/routerInitHooks";
 import Notify from "@/components/Notify";
 import Dialog from "@/components/Dialog";
 import "./Third.less";
 
 interface Props {
     isSmallWidth: boolean;
-    setIsOn: React.Dispatch<React.SetStateAction<string>>;
 }
 
-const index: React.FC<Props> = ({ isSmallWidth, setIsOn }) => {
+const index: React.FC<Props> = ({ isSmallWidth }) => {
     const [isNotify, setIsNotify] = useState(false);
     const [isDialog, setIsDialog] = useState(false);
-    routerInitHooks(setIsOn,"Third");
     return (
         <div
             className="Third"

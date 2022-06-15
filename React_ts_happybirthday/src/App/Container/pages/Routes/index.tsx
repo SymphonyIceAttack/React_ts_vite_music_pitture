@@ -5,7 +5,6 @@ import Wraper from "../Wrapper";
 import { RouteObject, Navigate } from "react-router-dom";
 export const Route = (
     isSmallWidth: boolean,
-    setIsOn: React.Dispatch<React.SetStateAction<string>>
 ): RouteObject[] => [
     {
         path: "/",
@@ -15,7 +14,7 @@ export const Route = (
         path: "/onces",
         element: (
             <Wraper>
-                <Onces isSmallWidth={isSmallWidth} setIsOn={setIsOn} />
+                <Onces isSmallWidth={isSmallWidth} />
             </Wraper>
         ),
     },
@@ -23,7 +22,7 @@ export const Route = (
         path: "/twice",
         element: (
             <Wraper>
-                <Twice isSmallWidth={isSmallWidth} setIsOn={setIsOn} />
+                <Twice isSmallWidth={isSmallWidth} />
             </Wraper>
         ),
     },
@@ -31,7 +30,7 @@ export const Route = (
         path: "/third",
         element: (
             <Wraper>
-                <Third isSmallWidth={isSmallWidth} setIsOn={setIsOn} />
+                <Third isSmallWidth={isSmallWidth} />
             </Wraper>
         ),
     },
