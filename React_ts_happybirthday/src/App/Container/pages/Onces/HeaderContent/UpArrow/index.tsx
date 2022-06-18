@@ -1,29 +1,25 @@
 import React from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { musicArr } from "@/App/Container/pages/Onces/OnePageModel/musicArr";
+import { musicArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/musicArr";
 import "./UpArrow.less";
+import { AppDispatch, decrement, useCounterStore } from "@/store";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
 interface Props {
     isloading: boolean;
-    count: number;
-    DecrePage: () => void;
-    DecreMusic: () => void;
 }
 
-const index: React.FC<Props> = ({
-    isloading,
-    count,
-    DecrePage,
-    DecreMusic,
-}) => {
+const index: React.FC<Props> = ({ isloading }) => {
+    const counter = useSelector(useCounterStore());
+    const dispatch = useDispatch<AppDispatch>();
     return (
         <>
             {!isloading ? (
-                count > 0 ? (
+                counter > 0 ? (
                     <span
                         className="upArrow"
                         onClick={() => {
-                            DecrePage();
-                            DecreMusic();
+                            dispatch(decrement());
                         }}
                     >
                         <AiOutlineArrowUp />
