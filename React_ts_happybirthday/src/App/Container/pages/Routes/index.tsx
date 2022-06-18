@@ -1,11 +1,11 @@
-import Onces from "@/App/Container/pages/Onces";
-import Twice from "@/App/Container/pages/Twice";
-import Third from "@/App/Container/pages/Third";
+import { lazy } from "react";
 import Wraper from "../Wrapper";
 import { RouteObject, Navigate } from "react-router-dom";
-export const Route = (
-    isSmallWidth: boolean,
-): RouteObject[] => [
+const Onces = lazy(() => import("../Onces"));
+const Twice = lazy(() => import("../Twice"));
+const Third = lazy(() => import("../Third"));
+
+export const Route = (isSmallWidth: boolean): RouteObject[] => [
     {
         path: "/",
         element: <Navigate to="onces" />,

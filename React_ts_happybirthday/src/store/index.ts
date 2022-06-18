@@ -1,4 +1,4 @@
-import { store } from "./configureStore";
+import { store, RootState,AppDispatch } from "./configureStore";
 
 export default store;
 
