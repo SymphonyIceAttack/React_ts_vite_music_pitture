@@ -1,20 +1,20 @@
 import React, { useEffect, useState } from "react";
-import { speechStrArr } from "@/App/Container/pages/Onces/OnePageModel/speechStr";
+import { speechStrArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/speechStr";
 import "./Title.less";
+import { useCounterStore } from "@/store";
+import { useSelector } from "react-redux";
+interface Props {}
 
-interface Props {
-    count: number;
-}
-
-const index: React.FC<Props> = ({ count }) => {
+const index: React.FC<Props> = ({}) => {
+    const counter = useSelector(useCounterStore());
     const [currentStr, setCurrentStr] = useState("");
     const [currentIndex, setCurrentIndex] = useState(0);
     useEffect(() => {
         let timer: any;
-        if (currentIndex < speechStrArr[count].length) {
+        if (currentIndex < speechStrArr[counter].length) {
             timer = setTimeout(() => {
                 setCurrentStr(
-                    (str) => (str += speechStrArr[count][currentIndex])
+                    (str) => (str += speechStrArr[counter][currentIndex])
                 );
                 setCurrentIndex((currentIndex) => (currentIndex += 1));
             }, 200);
@@ -28,7 +28,7 @@ const index: React.FC<Props> = ({ count }) => {
         setCurrentStr("");
         setCurrentIndex(0);
         return () => {};
-    }, [count]);
+    }, [counter]);
 
     return <p className="OncesContentTitle">{currentStr}</p>;
 };

@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { imageArr } from "@/App/Container/pages/Onces/OnePageModel/imageArr";
+import { imageArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/imageArr";
 import "./Loading.less";
 const index = () => {
     useEffect(() => {

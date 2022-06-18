@@ -1,5 +1,5 @@
-import { store, RootState,AppDispatch } from "./configureStore";
+import { store, RootState, AppDispatch } from "./configureStore";
 
 export default store;
-
-export { increment, decrement } from "./reducers/Counter";
+export type { RootState, AppDispatch };
+export { increment, decrement, useCounterStore } from "./reducers/Counter";

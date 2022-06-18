@@ -1,21 +1,18 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./AudioPlayer.less";
 import { GrPlay } from "react-icons/gr";
 import { AiOutlinePause } from "react-icons/ai";
+import { useCounterStore } from "@/store";
+import { useSelector } from "react-redux";
+
 interface Props {
     time: number;
-    count: number;
     MusicUrl: string;
-    isPlaying: boolean;
-    setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }
-const index: React.FC<Props> = ({
-    time,
-    count,
-    MusicUrl,
-    isPlaying,
-    setIsPlaying,
-}) => {
+const index: React.FC<Props> = ({ time, MusicUrl }) => {
+    const counter = useSelector(useCounterStore());
+    const [isPlaying, setIsPlaying] = useState(true);
+
     useEffect(() => {
         let timer: any;
         setIsPlaying(false);
@@ -27,7 +24,7 @@ const index: React.FC<Props> = ({
         return () => {
             clearTimeout(timer);
         };
-    }, [count]);
+    }, [counter]);
     const audioRef = useRef<HTMLAudioElement>(null);
     return (
         <>
