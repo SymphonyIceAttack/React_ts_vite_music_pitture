@@ -1,6 +1,7 @@
 import React from "react";
 import MapCharts from "@/App/Container/pages/Twice/MapCharts";
 import "./Twice.less";
+
 interface Props {
     isSmallWidth: boolean;
 }
