@@ -21,6 +21,9 @@
 		{
 			"path": "./src/App/Container/pages/Third"
 		},
+		{
+			"path":"./src/components"
+		}
 	],
 	"settings": {
 		"nuxt.isNuxtApp": false,

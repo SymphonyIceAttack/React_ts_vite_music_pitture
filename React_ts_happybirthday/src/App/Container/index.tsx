@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Suspense } from "react";
 import Pages from "./pages/Pages";
-import Loading from "@/App/Loading";
-import {
-    CSSTransition,
-    SwitchTransition,
-} from "react-transition-group";
+import { CSSTransition, SwitchTransition } from "react-transition-group";
 import RainList from "./RainList";
 import "./Contaner.less";
 interface Props {
@@ -22,9 +18,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                     timeout={500}
                     key={location.pathname}
                 >
-                    <Suspense fallback={<Loading />}>
-                        {Pages(isSmallWidth)}
-                    </Suspense>
+                    {Pages(isSmallWidth)}
                 </CSSTransition>
             </SwitchTransition>
         </div>

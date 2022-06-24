@@ -20,14 +20,13 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     return (
         <div
             className={`${style.Onces}`}
-            style={{ width: isSmallWidth ? "90vw" : "70vw" }}
+            style={{ width: isSmallWidth ? "90vw" : "75vw" }}
         >
             <Content isloading={isloading} BgUrl={BgUrl} />
             <UpArrow isloading={isloading} />
             <AudioPlayer time={time} MusicUrl={MusicUrl} />
             <DownArrow isloading={isloading} />
             <Bgfilter BgUrl={BgUrl} isloading={isloading} time={time} />
-
         </div>
     );
 };
