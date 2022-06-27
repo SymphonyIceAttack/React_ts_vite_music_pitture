@@ -4,14 +4,17 @@ import { StrSliceHooks } from "./StrSliceHooks";
 import style from "./MainContent.module.less";
 import StringBoxScroll from "./StringBoxScroll";
 import srcImg from "/images/pexels-soubhagya-maharana-5245865.jpg";
-
-const index = () => {
+interface Props {
+    isSmallWidth: boolean;
+}
+const index: React.FC<Props> = ({ isSmallWidth }) => {
     const { StrArr } = StrSliceHooks();
     return (
         <div
             style={{
                 minHeight: `${StrArr.length * 85}px`,
                 backgroundImage: `url(${srcImg})`,
+                width: isSmallWidth ? "90vw" : "75vw",
             }}
             className={style["MainContent"]}
         >
