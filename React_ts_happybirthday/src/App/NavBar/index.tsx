@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { NavLink } from "react-router-dom";
-import "./NavBar.less";
+import Style from  "./NavBar.module.less";
 
 interface Props {
     isSmallWidth: boolean;
@@ -30,7 +30,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
     const [LinkActiveLeft, setLinkActiveLeft] = useState(0);
     const [LinkActiveWidth, setLinkActiveWidth] = useState(0);
     const ActiveClass = ({ isActive }: { isActive: boolean }): string => {
-        if (isActive) return "active_link";
+        if (isActive) return Style["active_link"];
         return "";
     };
 
@@ -56,7 +56,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
         setTimeout(() => {
             const Alinks = document.querySelectorAll("a");
             Alinks.forEach((link) => {
-                if (link.className === "active_link") {
+                if (link.className === Style["active_link"]) {
                     const initTop = link.offsetLeft;
                     const initHeight = link.clientWidth;
                     setNavCursorTop(initTop);
@@ -65,14 +65,39 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
                     setLinkActiveWidth(initHeight);
                 }
             });
-        }, 500);
+        }, 300);
+    }, []);
+    useEffect(() => {
+        let isNext = true;
+        const resize = () => {
+            if (!isNext) return;
+            isNext = false;
+            setTimeout(() => {
+                const Alinks = document.querySelectorAll("a");
+                Alinks.forEach((link) => {
+                    if (link.className === Style["active_link"]) {
+                        const initTop = link.offsetLeft;
+                        const initHeight = link.clientWidth;
+                        setNavCursorTop(initTop);
+                        setLinkActiveLeft(initTop);
+                        setLinkWidth(initHeight);
+                        setLinkActiveWidth(initHeight);
+                    }
+                });
+                isNext = true;
+            }, 500);
+        };
 
-        return () => {};
+        window.addEventListener("resize", resize);
+
+        return () => {
+            window.removeEventListener("resize", resize);
+        };
     }, []);
 
     return (
         <div
-            className="NavBar"
+            className={Style.NavBar}
             style={{
                 width: isSmallWidth ? "100vw" : "100vw",
             }}
@@ -91,7 +116,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             ))}
 
             <div
-                className={"nav_cursor"}
+                className={Style['nav_cursor']}
                 style={{
                     left: NavCursorTop + "px",
                     width: LinkWidth + "px",

@@ -1,5 +1,4 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useSelector } from "react-redux";
 import { RootState } from "../configureStore";
 const initialState = {
     count: 0,
