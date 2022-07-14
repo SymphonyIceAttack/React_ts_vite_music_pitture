@@ -27,5 +27,8 @@ export default defineConfig({
             plugins: [postcssImport, autoprefixer, lessPluginAutoprefix],
         },
     },
+    server: {
+        host: "0.0.0.0",
+    },
     build: {},
 });
