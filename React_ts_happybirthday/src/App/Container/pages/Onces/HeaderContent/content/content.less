@@ -10,6 +10,7 @@
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
+    animation: Blur 3s ease-in infinite
 }
 
 .Content>span {
@@ -23,6 +24,20 @@
     background-color: rgb(25, 231, 241);
     border-radius: 50%;
     animation: big 1s;
+}
+
+@keyframes Blur {
+    0% {
+        backdrop-filter: blur(0px);
+    }
+
+    50% {
+        backdrop-filter: blur(3px);
+    }
+
+    100% {
+        backdrop-filter: blur(0px);
+    }
 }
 
 @keyframes big {
