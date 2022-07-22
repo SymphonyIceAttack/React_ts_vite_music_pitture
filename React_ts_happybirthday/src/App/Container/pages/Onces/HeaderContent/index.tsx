@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
-import AudioPlayer from "@/App/Container/pages/Onces/HeaderContent/AudioPlayer";
-import Content from "@/App/Container/pages/Onces/HeaderContent/content";
-import UpArrow from "@/App/Container/pages/Onces/HeaderContent/UpArrow";
-import DownArrow from "@/App/Container/pages/Onces/HeaderContent/DownArrow";
-import Bgfilter from "@/App/Container/pages/Onces/HeaderContent/Bgfilter";
-import { BGhooks } from "@/App/Container/pages/Onces/HeaderContent/hookBgFilters";
-import { hookMusic } from "@/App/Container/pages/Onces/HeaderContent/hooksMusic";
-import style from "./HeaderContent.module.less";
-
+import AudioPlayer from "./AudioPlayer";
+import Content from "./content";
+import UpArrow from "./UpArrow";
+import DownArrow from "./DownArrow";
+import Bgfilter from "./Bgfilter";
+import { BGhooks } from "./hookBgFilters";
+import { hookMusic } from "./hooksMusic";
+import style from "./HeaderContent.module.less"
 interface Props {
     isSmallWidth: boolean;
 }
