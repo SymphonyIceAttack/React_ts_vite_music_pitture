@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 export const LoadingHooks = () => {
-    const MouseDown = () => {
-        setIsMouseDown(true);
-    };
-
     const [isLoading, setIsLoading] = useState(true);
     const [isMouseDown, setIsMouseDown] = useState(false);
+    const MouseDown = useCallback(() => {
+        setIsMouseDown(true);
+    }, []);
     useEffect(() => {
         setTimeout(() => {
             setIsLoading(false);
@@ -14,16 +13,12 @@ export const LoadingHooks = () => {
     }, []);
 
     useEffect(() => {
-        if (!isMouseDown) {
-            window.addEventListener("mousedown", MouseDown);
-        }
+        window.addEventListener("mousedown", MouseDown);
+
         return () => {
             window.removeEventListener("mousedown", MouseDown);
         };
-    }, [isMouseDown]);
+    }, []);
 
-    return {
-        isLoading,
-        isMouseDown,
-    };
+    return [isLoading, isMouseDown];
 };

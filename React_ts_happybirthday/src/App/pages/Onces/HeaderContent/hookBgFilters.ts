@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { imageArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/imageArr";
+import { imageArr } from "@/App/pages/Onces/HeaderContent/OnePageModel/imageArr";
 import { useCounterStore } from "@/store";
 import { useSelector } from "react-redux";
 

@@ -1,14 +1,15 @@
 import { useEffect, useState } from "react";
-import Container from "@/App/Container";
-import NavBar from "@/App/NavBar";
-import Loading from "@/App/Loading";
+import Container from "./Container";
+import NavBar from "./NavBar";
+import Loading from "@/components/Loading";
 import "./App.less";
-import { FlexWindowHooks } from "@/App/AppHooks/FlexWindowHooks";
-import { LoadingHooks } from "@/App/AppHooks/LoadingHooks";
+import { FlexWindowHooks } from "./AppHooks/FlexWindowHooks";
+import { LoadingHooks } from "./AppHooks/LoadingHooks";
+import Pages from "./pages";
 
 function App() {
-    const isSmallWidth = FlexWindowHooks(700);
-    const { isLoading, isMouseDown } = LoadingHooks();
+    const [isSmallWidth] = FlexWindowHooks(700);
+    const [isLoading, isMouseDown] = LoadingHooks();
     return (
         <div
             className="App"
@@ -27,7 +28,10 @@ function App() {
             ) : (
                 <>
                     <NavBar isSmallWidth={isSmallWidth} />
-                    <Container isSmallWidth={isSmallWidth} />
+                    <Container
+                        isSmallWidth={isSmallWidth}
+                        Pages={Pages}
+                    ></Container>
                 </>
             )}
         </div>

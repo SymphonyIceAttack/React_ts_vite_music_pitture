@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { musicArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/musicArr";
+import { musicArr } from "@/App/pages/Onces/HeaderContent/OnePageModel/musicArr";
 import { useCounterStore } from "@/store";
 import { useSelector } from "react-redux";
 export const hookMusic = () => {

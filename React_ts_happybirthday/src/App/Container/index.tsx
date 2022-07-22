@@ -1,14 +1,20 @@
 import React, { useState, useEffect } from "react";
 import { Suspense } from "react";
-import Pages from "./pages/Pages";
 import { CSSTransition, SwitchTransition } from "react-transition-group";
 import RainList from "./RainList";
 import "./Contaner.less";
 interface Props {
+    children?: React.ReactNode;
     isSmallWidth: boolean;
+    Pages: (
+        isSmallWidth: boolean
+    ) => React.ReactElement<
+        any,
+        string | React.JSXElementConstructor<any>
+    > | null;
 }
 
-const index: React.FC<Props> = ({ isSmallWidth }) => {
+const index: React.FC<Props> = ({ children, isSmallWidth, Pages }) => {
     return (
         <div className="Container">
             <RainList />

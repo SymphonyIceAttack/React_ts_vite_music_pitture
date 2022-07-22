@@ -9,15 +9,13 @@ interface Props {
 
 const index: React.FC<Props> = ({ BgUrl, isloading, time }) => {
     return (
-        <div
+        <img
             className="AppAfter"
+            src={BgUrl}
             style={{
-                backgroundImage: ` url("${BgUrl}")`,
-                animation: isloading
-                    ? `move ${time / 1000}s linear 1`
-                    : "",
+                animation: isloading ? `move ${time / 1000}s linear 1` : "",
             }}
-        ></div>
+        ></img>
     );
 };
 

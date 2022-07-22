@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { speechStrArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/speechStr";
+import { speechStrArr } from "@/App/pages/Onces/HeaderContent/OnePageModel/speechStr";
 import "./Title.less";
 import { useCounterStore } from "@/store";
 import { useSelector } from "react-redux";

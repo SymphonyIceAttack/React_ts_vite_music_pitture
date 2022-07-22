@@ -1,5 +1,5 @@
 import React from "react";
-import MapCharts from "@/App/Container/pages/Twice/MapCharts";
+import MapCharts from "@/App/pages/Twice/MapCharts";
 import "./Twice.less";
 
 interface Props {

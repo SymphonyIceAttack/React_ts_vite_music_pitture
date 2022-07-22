@@ -1,11 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 export const FlexWindowHooks = (size: number) => {
     const [windowWith, setWindowWith] = useState(window.innerWidth);
     const [isSmallWidth, setIsSmallWidth] = useState(windowWith < size);
-    const resize = (e: UIEvent) => {
+    const resize = useCallback((e: UIEvent) => {
         setWindowWith(window.innerWidth);
-    };
+    }, []);
     useEffect(() => {
         window.addEventListener("resize", resize);
 
@@ -13,11 +13,11 @@ export const FlexWindowHooks = (size: number) => {
             window.removeEventListener("resize", resize);
         };
     }, []);
-    
+
     useEffect(() => {
         setIsSmallWidth(windowWith < size);
         return () => {};
     }, [windowWith]);
 
-    return isSmallWidth;
+    return [isSmallWidth];
 };

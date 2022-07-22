@@ -1,5 +1,5 @@
 import React, { useRef, useEffect } from "react";
-import Title from "@/App/Container/pages/Onces/HeaderContent/content/Title";
+import Title from "@/App/pages/Onces/HeaderContent/content/Title";
 import { Bounce } from "./Buonce";
 import "./content.less";
 interface Props {

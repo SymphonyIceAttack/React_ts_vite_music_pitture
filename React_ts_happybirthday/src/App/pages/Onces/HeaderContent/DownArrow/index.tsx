@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineArrowDown } from "react-icons/ai";
-import { imageArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/imageArr";
+import { imageArr } from "@/App/pages/Onces/HeaderContent/OnePageModel/imageArr";
 import "./DownArrow.less";
 import { AppDispatch, increment, useCounterStore } from "@/store";
 import { useDispatch } from "react-redux";

@@ -1,6 +1,6 @@
 import React from "react";
 import { AiOutlineArrowUp } from "react-icons/ai";
-import { musicArr } from "@/App/Container/pages/Onces/HeaderContent/OnePageModel/musicArr";
+import { musicArr } from "@/App/pages/Onces/HeaderContent/OnePageModel/musicArr";
 import "./UpArrow.less";
 import { AppDispatch, decrement, useCounterStore } from "@/store";
 import { useDispatch } from "react-redux";

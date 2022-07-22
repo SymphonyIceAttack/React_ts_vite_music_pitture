@@ -1,6 +1,6 @@
 import React, { useEffect, Suspense } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import Loading from "@/App/Loading";
+import Loading from "@/components/Loading";
 interface Props {
     children: React.ReactNode;
     needLogin?: boolean;
