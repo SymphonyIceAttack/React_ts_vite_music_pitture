@@ -56,7 +56,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
         setTimeout(() => {
             const Alinks = document.querySelectorAll("a");
             Alinks.forEach((link) => {
-                if (link.className === Style["active_link"]) {
+                if (link.className === Style['active_link']) {
                     const initTop = link.offsetLeft;
                     const initHeight = link.clientWidth;
                     setNavCursorTop(initTop);
@@ -75,7 +75,7 @@ const index: React.FC<Props> = ({ isSmallWidth }) => {
             setTimeout(() => {
                 const Alinks = document.querySelectorAll("a");
                 Alinks.forEach((link) => {
-                    if (link.className === Style["active_link"]) {
+                    if (link.className === Style['active_link']) {
                         const initTop = link.offsetLeft;
                         const initHeight = link.clientWidth;
                         setNavCursorTop(initTop);

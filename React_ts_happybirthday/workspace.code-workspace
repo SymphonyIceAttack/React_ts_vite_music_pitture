@@ -13,13 +13,13 @@
 			"path": "./src/App/Container"
 		},
 		{
-			"path": "./src/App/Container/pages/Onces"
+			"path": "./src/App/pages/Onces"
 		},
 		{
-			"path": "./src/App/Container/pages/Twice"
+			"path": "./src/App/pages/Twice"
 		},
 		{
-			"path": "./src/App/Container/pages/Third"
+			"path": "./src/App/pages/Third"
 		},
 		{
 			"path":"./src/components"
